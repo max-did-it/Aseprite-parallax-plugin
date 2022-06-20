@@ -28,7 +28,7 @@ function fillFrame(layer, frame, image, speed)
   if #(sprite.frames) < (Dlg.data.frameCount) then
     sprite:newEmptyFrame()
   end
-  local localSpeed = speed * (frame - 1)
+  local localSpeed = math.fmod(speed * (frame - 1), image.width)
 
   local newCelPos = Point(0, image.cel.position.y)
 
